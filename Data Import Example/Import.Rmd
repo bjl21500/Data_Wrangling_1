@@ -44,3 +44,28 @@ litters_data = janitor::clean_names(litters_data)
 pups_data = read_csv("./Data Import Example/FAS_pups.csv",
   col_types = "ciiiii")
 pups_data = janitor::clean_names(pups_data)
+```
+
+
+
+```
+select(litters_data, litter_number, starts_with ("pups"))
+`````
+
+pups_data = read_csv("./Data Import Example/FAS_pups.csv",
+  col_types = "ciiiii")
+pups_data = janitor::clean_names(pups_data)
+
+```{r}
+select(pups_data, litter_number, sex, pd_ears)
+```
+
+## Filter observations
+
+Do some filtering!!
+
+```{r}
+filter(litters_data, gd0_weight < 25)
+filter(litters_data, gd0_weight >= 25)
+
+library(tidyverse)
